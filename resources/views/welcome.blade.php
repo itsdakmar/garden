@@ -170,7 +170,7 @@
         var lastDate = null;
 
         setInterval(function () {
-            $.getJSON('http://localhost/firebase/realtime/'+chartType).done(function (data) {
+            $.getJSON('http://garden.test/firebase/realtime/'+chartType).done(function (data) {
                 if (lastDate === null) {
                     chart.data.datasets[0].data.push(data[0]);
                     chart.update({
@@ -194,7 +194,7 @@
         }, 6000);
     }
 
-    $.getJSON('http://localhost/firebase/'+chartType).done(function (data) {
+    $.getJSON('http://garden.test/firebase/'+chartType).done(function (data) {
         createChart(data);
     });
 </script>

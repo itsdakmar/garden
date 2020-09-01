@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\SensorData;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class FirebaseController extends Controller
 {
@@ -52,6 +54,11 @@ class FirebaseController extends Controller
         $array = [];
 
         foreach ($data as $datum) {
+            $last_record = SensorData::latest()->first();
+
+            if($last_record == NULL || $last_record->timestamp !== number_format($datum['timestamp'],0,'.','')){
+                DB::select("call insert_sensor_data_proc('".$datum['DHT22_temp']."','".$datum['DHT22_hum']."','".$datum['DS18B20_temp']."','".$datum['soilMoister']."','".$datum['timestamp']."')");
+            }
 
             $value = [
                 't' => Carbon::createFromTimestamp($datum['timestamp'])->toDateTimeString(),
