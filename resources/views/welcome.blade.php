@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pricing example for Bootstrap</title>
+    <title>Smart Garden Report</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -44,9 +44,9 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
     <h5 class="my-0 mr-md-auto font-weight-normal">Smart Garden Report</h5>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Chart</a>
-        <a class="p-2 text-dark" href="#">Datatable</a>
-        <a class="p-2 text-dark" href="#">Alert / Warning</a>
+        <a class="p-2 text-dark" href="{{ url('/') }}">Chart</a>
+        <a class="p-2 text-dark" href="{{ route('datatable') }}">Datatable</a>
+        <a class="p-2 text-dark" href="{{ route('alert') }}">Alert / Warning</a>
     </nav>
 </div>
 

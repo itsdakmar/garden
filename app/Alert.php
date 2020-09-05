@@ -6,22 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property string $air_temp
- * @property string $air_humid
- * @property string $soil_temp
- * @property string $soil_humid
+ * @property string $value
+ * @property string $sensor
+ * @property string $message
  * @property string $timestamp
  * @property string $created_at
  * @property string $updated_at
  */
-class SensorData extends Model
+class Alert extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'sensor_data';
+    protected $table = 'alert';
 
     /**
      * The "type" of the auto-incrementing ID.
@@ -31,10 +30,9 @@ class SensorData extends Model
     protected $keyType = 'integer';
     protected $dates = ['timestamp'];
 
-
     /**
      * @var array
      */
-    protected $fillable = ['air_temp', 'air_humid', 'soil_temp', 'soil_humid', 'timestamp', 'created_at', 'updated_at'];
+    protected $fillable = ['value', 'sensor', 'message', 'timestamp', 'created_at', 'updated_at'];
 
 }

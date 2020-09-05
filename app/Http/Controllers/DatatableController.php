@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SensorData;
 use Illuminate\Http\Request;
 
 class DatatableController extends Controller
@@ -12,8 +13,8 @@ class DatatableController extends Controller
      */
     public function index()
     {
-        die('1');
-        return view('datatable.datatable.index');
+        $data = SensorData::latest()->get();
+        return view('datatable.index', compact('data'));
     }
 
     /**

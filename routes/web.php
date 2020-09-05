@@ -17,4 +17,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/{type}', 'HomeController@index')->name('chart');
 Route::get('/firebase/{type}', 'FirebaseController@index');
 Route::get('/firebase/realtime/{type}', 'FirebaseController@realtime');
-Route::get('/data-table', 'Datatable@Controllerindex');
+Route::get('/page/data-table', 'DatatableController@index')->name('datatable');
+Route::get('/page/alert', 'AlertController@index')->name('alert');

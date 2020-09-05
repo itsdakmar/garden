@@ -16,30 +16,27 @@
                         <table id="example" class="display" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Air Temperature (°C)</th>
-                                <th>Air humidity</th>
-                                <th>Soil Temperature (°C)</th>
-                                <th>Soil Humidity</th>
+                                <th>Value</th>
+                                <th>Sensor</th>
+                                <th>Message</th>
                                 <th>Timestamp</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $datum)
                                 <tr>
-                                    <td>{{ $datum->air_temp }}</td>
-                                    <td>{{ $datum->air_humid }}</td>
-                                    <td>{{ $datum->soil_temp }}</td>
-                                    <td>{{ $datum->soil_humid }}</td>
+                                    <td>{{ $datum->value }}</td>
+                                    <td>{{ $datum->sensor }}</td>
+                                    <td>{{ $datum->message }}</td>
                                     <td>{{ $datum->timestamp->format('Y-m-d H:i:s') }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Air Temperature (°C)</th>
-                                <th>Air humidity</th>
-                                <th>Soil Temperature (°C)</th>
-                                <th>Soil Humidity</th>
+                                <th>Value</th>
+                                <th>Sensor</th>
+                                <th>Message</th>
                                 <th>Timestamp</th>
                             </tr>
                             </tfoot>
